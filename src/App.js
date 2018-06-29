@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import './Assets/css/default.min.css';
+
+import Header from './components/header'
+import Footer from './components/footer'
+import Homepage from './components/homePage'
+import Product from './components/productPage'
 
 class App extends Component {
   render() {
     return (
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolore alias neque, ex magni cupiditate fugiat iste voluptates officia perferendis id, quo eius tempora suscipit reiciendis labore harum excepturi ut.
-      </div>
+    	<BrowserRouter>
+	      <div className="App">
+	     		<Header />
+					<Route exact path="/" component={Homepage} />
+					<Route exact path="/products" component={Product} />
+	     		<Footer />
+	      </div>
+	    </BrowserRouter>
     );
   }
 }
